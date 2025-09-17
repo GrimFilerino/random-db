@@ -1,16 +1,14 @@
 package main
 
 import (
-    "encoding/json"
-    "fmt"
-    "log"
-    "net/http"
+    "github.com/gofiber/fiber/v2"
 )
 
-
 func main() {
-	log.Fatal(http.ListenAndServe(":8000", nil));
+	app := fiber.New();
 
+
+	app.Listen(":3000");
 }
 
 func http_handler() {
