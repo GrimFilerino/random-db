@@ -3,8 +3,6 @@
 
 #include "include/cJSON.h"
 
-#include <cstddef>
-#include <cstdlib>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
