@@ -83,12 +83,12 @@ PATCH /query/${collection}/${_id}?_rev=${_rev}
 
 
 Data object structure
-```JSON
+```
 {
-    $set:{
+    #set:{
         //data to update and add
     },
-    $delete: [ //data keys to delete ],
+    #delete: [ //keys to delete ],
 }
 ```
 
