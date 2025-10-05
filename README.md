@@ -77,18 +77,16 @@ PATCH /query/${collection}/${_id}?_rev=${_rev}
 | Parameter     | Type     | Description                     |
 | :------------ | :------- | :------------------------------ |
 | `collection`  | `string` | **Required**. Collection name   |
-| `_id`         | `string` | **Required**. _id of document    |
-| `_rev`        | `string` | **Required**. _rev of document    |
-| `data`        | `object` | **Required**. JSON object |
+| `_id`         | `string` | **Required**. _id of document   |
+| `_rev`        | `string` | **Required**. _rev of document  |
+| `data`        | `object` | **Required**. JSON object       |
 
 
 Data object structure
-```JSON
+```
 {
-    $set:{
-        //data to update and add
-    },
-    $delete: [ //data keys to delete ],
+    #set:{ //json data to update and/or add },
+    #delete: [ //keys to delete (type `string`) ],
 }
 ```
 
@@ -105,11 +103,11 @@ POST /query/${collection}/${_id}?_rev=${_rev}
 | `collection`  | `string` | **Required**. Collection name   |
 | `_id`         | `string` | **Required**. _id of document    |
 | `_rev`        | `string` | **Optional**. _rev of document    |
-| `pipeline`    | `object[]` | **Required**. query pipeline|
+| `pipeline`    | `object[]` | **Required**. Query pipeline|
 
 
 Pipeline array structure
-```JSON
+```
 [
     { #where : {} },
     { #add : {} },
@@ -121,10 +119,10 @@ Pipeline array structure
 
 ## Aggregation
 
-### !where
+### \#where
 
-`!where` is used to filter documents based on certain criterias like the following 
-```JSON
+`#where` is used to filter documents based on certain criterias like the following 
+```
 #where : {
     _id : ${_id}
 }
@@ -132,7 +130,7 @@ Pipeline array structure
 
 `!where` also has certain keywords that makes quering easier.
 
-```JSON
+```
 #where : {
     ${key}: {
         #equals : ${value},
@@ -193,7 +191,6 @@ Contributions are always welcome!
 See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
-
 
 
 <h1 align="center">Contributors' Wall</h1>
